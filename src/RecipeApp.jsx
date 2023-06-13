@@ -10,7 +10,7 @@ const RecipeApp = () => {
     setIsLoading(true);
     try {
       // Make an API call to fetch recipes based on the search term
-      const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=52772`);
+      const response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchTerm}`);
       const data = await response.json();
       setRecipes(data.meals || []); // Use the meals property or an empty array if it doesn't exist
     } catch (error) {
@@ -22,28 +22,12 @@ const RecipeApp = () => {
   };
 
   useEffect(() => {
-    const fetchRecipes = async () => {
-      setIsLoading(true);
-      try {
-        // Make an API call to fetch recipes based on the search term
-        const response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchTerm}`);
-        const data = await response.json();
-        setRecipes(data.meals || []); // Use the meals property or an empty array if it doesn't exist
-      } catch (error) {
-        console.error('Error fetching recipes:', error);
-      } finally {
-        setIsLoading(false);
-        setSearched(true); // Set searched to true after search is performed
-      }
-    };
-  
     if (searchTerm !== '') {
       fetchRecipes(); // Fetch recipes when the component mounts or when searchTerm changes
     } else {
       setRecipes([]); // Clear recipes when searchTerm is empty
     }
   }, [searchTerm]);
-  
 
   const handleSearch = (event) => {
     event.preventDefault();
