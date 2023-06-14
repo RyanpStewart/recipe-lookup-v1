@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
-<Route path="/recipeapp">
-  <RecipeApp />
-  </Route>
+
 const RecipeApp = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [recipes, setRecipes] = useState([]);
