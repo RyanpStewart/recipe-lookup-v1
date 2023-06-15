@@ -13,22 +13,23 @@ const App = () => {
           <nav>
             <ul className="navbar">
               <li className="navbar-item">
-                <Link to="/" className="navbar-link">Home</Link>
+                <Link to="/home" className="navbar-link">Home</Link>
               </li>
               <li className="navbar-item">
                 <Link to="/about" className="navbar-link">About</Link>
               </li>
               <li className="navbar-item">
-                <Link to="/recipeapp" className="navbar-link">Recipe App</Link>
+                <Link to="/app" className="navbar-link">Recipe App</Link>
               </li>
             </ul>
           </nav>
         </header>
  </Navbar>
         <Routes>
-          <Route exact path="/" element={<HomePage />} />
+          <Route exact path="/home" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/recipeapp" element={<RecipeApp />} />
+          
         </Routes>
       </div>
     </Router>
