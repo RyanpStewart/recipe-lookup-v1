@@ -58,7 +58,8 @@ const RecipeApp = () => {
             <ul className="recipe-list">
               {recipes.map((recipe) => (
                 <li key={recipe.idMeal} className="recipe-item">
-                  {recipe.strMeal}
+                  <img src={recipe.strMealThumb} alt={recipe.strMeal} />
+                  <div>{recipe.strMeal}</div>
                 </li>
               ))}
             </ul>
