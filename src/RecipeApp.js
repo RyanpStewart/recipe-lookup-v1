@@ -58,10 +58,15 @@ const RecipeApp = () => {
             <ul className="recipe-list">
               {recipes.map((recipe) => (
                 <li key={recipe.idMeal} className="recipe-item">
-                  <img src={recipe.strMealThumb} alt={recipe.strMeal} />
+                  <img
+                    src={recipe.strMealThumb}
+                    alt={recipe.strMeal}
+                    style={{ width: '200px', height: 'auto' }} // Set the desired width and adjust height proportionally
+                  />
                   <div>{recipe.strMeal}</div>
                 </li>
               ))}
+              
             </ul>
           )}
         </>
